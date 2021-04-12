@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pods.css">
+    <title>Music Player</title>
+</head>
+
+<body onload="myFunction()">
+    <!--video background-->
+
+    <!-- Pre-loader -->
+
+    <div id="loader"></div>
+
+    <div class="container" id="myDiv">
+
+        <div class="nav-bar">
+            <div class="nav-items">
+                <button><a href="#">Files</a></button>
+                <button><a href="index.html">Home</a></button>
+                <button><a href="browse.html">Browse</a></button>
+                <button><a href="about.html">About</a></button>
+            </div>
+
+            <div class="nav-logo">
+
+                <img src="img/binterludeicon.png" alt="bint">
+
+                <h1>
+                    binterlude
+                </h1>
+            </div>
+        </div>
+
+        <div class="pods-container">
+            <div class="top-bar">
+                <div class="description">
+                    <h1>Binterlude Podcasts</h1>
+                    <p></p>
+                    <h3>Explore exclusive binterlude podcasts</h3>
+                </div>
+            </div>
+
+
+            <div class="main-part">
+                <div class="logo">
+                    <i class="fas fa-podcast"></i>
+                </div>
+
+                <button class="dropdown" style="font-size: 15px;" onclick="justPods()">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+
+                <div class="pods-lists">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pods-explore">
+
+        </div>
+
+    </div>
+</body>
+
+<!--Script-->
+<script src="pods.js"></script>
+<script src="https://kit.fontawesome.com/1159fbb910.js" crossorigin="anonymous"></script>
+
+</html>
