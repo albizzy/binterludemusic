@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Binterlude Music</title>
+</head>
+
+<body>
+    <!--video background-->
+
+    <div class="nav-bar">
+        <div class="nav-items">
+            <button><a href="#">Files</a></button>
+            <button><a href="index.html">Home</a></button>
+            <button><a href="browse.html">Browse</a></button>
+            <button><a href="about.html">About</a></button>
+        </div>
+
+        <div class="nav-logo">
+            <h1>
+                binterlude
+            </h1>
+        </div>
+    </div>
+
+    <div class="player-container">
+        <div class="main-player-wrapper">
+            <div class="main-container">
+                <div class="main" id="playerOverlay">
+
+                    <div class="playing-part">
+                        <div class="img">
+                            <img id="track_image" loading="lazy">
+
+                            <div class="blur"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extras">
+                    <div class="extras-items" class="pods">
+                        <a href="podcasts.html">Podcasts</a>
+                        <i class='bx bx-microphone'></i>
+                    </div>
+
+                    <div class="extras-items" class="favs">
+                        <a href="favorites.html">Favourites</a>
+                        <i class='bx bxs-heart'></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="control-part">
+
+                <div class="control-buttons">
+                    <div class="range-slider">
+                        <input type="range" min="0" max="100" id="slider" value="0" onchange="change_duration()">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="play-container">
+                <div class="control-bar">
+                    <div class="main-btns">
+                        <button id="shuffle" onclick="shuffle_song()"><i class='bx bx-shuffle'  id="shuffle_color" ></i></button>
+                        <button id="prev" onclick="previous_song()"><i class='bx bx-skip-previous' ></i></button>
+                        <button id="play" onclick="justplay()"><i class='bx bx-play' ></i></button>
+                        <button id="next" onclick="next_song()"><i class='bx bx-skip-next' ></i></button>
+                        <button id="shuffle" onclick="add_song()"><i class='bx bx-plus'  ></i></button>
+                    </div>
+
+                    <div class="song-title">
+                        <p id="title">title.mp3</p>
+                        <p id="artist">Artist name</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="song-library-wrapper">
+            <div class="song_list" id="song_list" id>
+                <div class="top">
+
+                    <div class="search-bar">
+                        <input type="text" id="search" placeholder="Search">
+                    </div>
+
+                    <h1>Music Library</h1>
+
+                    <button onclick="updateLibrary()"><i class='bx bx-list-ol' id="alterList"></i></button>
+                </div>
+
+                <div class="library">
+
+                    <table class="table" id="library">
+                        <tr class="music_info">
+                            <th>Artist</th>
+                            <th>Title</th>
+                            <th>Album</th>
+                        </tr>
+
+                        <tbody id="myMusic">
+
+                        </tbody>
+                    </table>
+
+                    <div class="recentPlayed">
+                        <h1>Recently Played</h1>
+                        <div class="content-container">
+                            <div class="content-song">
+                                <div class="img">
+                                    <img src="img/12.jpg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="content-song">
+                                <div class="img">
+                                    <div class="img">
+                                        <img src="img/15.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-song">
+                                <div class="img">
+                                    <div class="img">
+                                        <img src="img/8.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-song">
+                                <div class="img">
+                                    <div class="img">
+                                        <img src="img/6.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-song">
+                                <div class="img">
+                                    <div class="img">
+                                        <img src="img/13.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="recommended">
+                        <h1>Recommended For You</h1>
+                    </div>
+
+                    <div class="newRelease">
+                        <h1>New Release</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<!--Script-->
+<script src="main.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.6.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.6.3/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+</html>

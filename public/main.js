@@ -1,6 +1,6 @@
 let options = document.querySelector('.options');
 let previous = document.querySelector('#prev');
-let play = document.querySelector('#play');
+let play = document.getElementById('play');
 let next = document.querySelector('#next');
 let slider = document.querySelector('#slider');
 let show_duration = document.querySelector('#show_duration');
@@ -222,8 +222,6 @@ function load_track(index_no) {
     title.innerHTML = All_song[index_no].name;
     track_image.src = All_song[index_no].img;
     artist.innerHTML = All_song[index_no].singer;
-    p_title.innerHTML = All_song[index_no].name;
-    p_artist.innerHTML = All_song[index_no].singer;
     track.load();
 
     timer = setInterval(range_slider, 1000);
@@ -250,8 +248,6 @@ function playsong() {
     track.play();
     playing_song = true;
     play.innerHTML = '<i class="bx bx-pause"></i>';
-    playInPlaylist.innerHTML = '<i class="bx bx-pause"></i>';
-    play_image.src = All_song[index_no].img;
 }
 
 //pause song 
@@ -259,7 +255,6 @@ function pausesong() {
     track.pause();
     playing_song = false;
     play.innerHTML = '<i class="bx bx-play"></i>';
-    playInPlaylist.innerHTML = '<i class="bx bx-play"></i>';
 }
 
 //next song 
@@ -369,72 +364,4 @@ function openLibrary() {
 function closeLibrary() {
     toggleLibrary = false;
     alterLibrary.style.display = "none";
-}
-
-//shuffle algorithm - fisher yates algorithm
-const shuffleSongs = All_song => {
-    for (let i = All_song.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const temp = All_song[i];
-        All_song[i] = All_song[j];
-        All_song[j] = temp;
-    }
-
-    return All_song;
-};
-
-
-let toggleShuffle = false;
-
-function shuffle_song() {
-    if (toggleShuffle == false) {
-        shuffle_on();
-    } else {
-        shuffle_off();
-    }
-}
-
-function shuffle_on() {
-    toggleShuffle = true;
-    console.log("True");
-    changeShuffleState.setAttribute("style", "color: yellow")
-    shuffleSongs(All_song);
-}
-
-function shuffle_off() {
-    toggleShuffle = false;
-    console.log("False");
-    changeShuffleState.setAttribute("style", "color: #fff")
-}
-
-
-var playerOverlay = document.getElementById('playerOverlay')
-var toggleOverlay = document.getElementById('overlayToggle')
-
-playerOverlay.addEventListener("mouseover", over);
-playerOverlay.addEventListener("mouseout", out);
-
-function over() {
-    toggleOverlay.setAttribute("style", "display: block;");
-}
-
-function out() {
-    toggleOverlay.setAttribute("style", "display: none;");
-}
-
-var myVar;
-let container = document.getElementById('myDiv1')
-let control = document.getElementById('myDiv2')
-let cont = document.getElementById('myDiv3')
-let pre_loader = document.getElementById('loader')
-
-function myFunction() {
-    myVar = setTimeout(showPage, 2000);
-}
-
-function showPage() {
-    pre_loader.style.display = "none"
-    container.style.display = "block"
-    control.style.display = "block"
-    cont.style.display = "block"
 }
