@@ -200,6 +200,14 @@ let All_song = [{
         singer: "Rapcha",
         album: "single",
     },
+
+    {
+        name: "Just Like Magic",
+        path: "music/song22.mp3",
+        img: "img/22.jpg",
+        singer: "Ariana Grande",
+        Album: "Positions",
+    },
 ];
 
 //All_song for song list
