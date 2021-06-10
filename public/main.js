@@ -214,8 +214,12 @@ const randomSong = Math.floor(Math.random() * All_song.length);
 function load_track(index_no) {
     reset_slider();
     All_song.sort(function(a, b) {
-        if (a.singer < b.singer) { return -1; }
-        if (a.singer > b.singer) { return 1; }
+        if (a.singer < b.singer) {
+            return -1;
+        }
+        if (a.singer > b.singer) {
+            return 1;
+        }
         return 0;
     })
     track.src = All_song[index_no].path;
